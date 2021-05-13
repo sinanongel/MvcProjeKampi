@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<div class="card card-default">
+        <div class="card-deck">
+            <div class="card text-center">
+                <div class="card-body text-white bg-info">
+                    <h3 class="card-text">Toplam Kategori Sayısı</h3>
+                    <h1 class="card-text">@ViewBag.countCategory</h1>
+                    <br />
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body text-white bg-danger">
+                    <h4 class="card-text">Başlık Tablosunda Bulunan "Yazılım" Kategorisine Ait Başlık Sayısı</h4>
+                    <h1 class="card-text">@ViewBag.countHeading</h1>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body text-white bg-success">
+                    <h3 class="card-text">Yazar Adında 'a' Harfi Geçen Yazar Sayısı</h3>
+                    <h1 class="card-text">@ViewBag.countWriter</h1>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="card-deck">
+            <div class="card text-center">
+                <div class="card-body text-white bg-warning">
+                    <h3 class="card-text">En Fazla Başlığa Sahip Kategori Adı</h3>
+                    <h1 class="card-text">@ViewBag.categoryName</h1>
+                    <br />
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-body text-white bg-primary">
+                    <h4 class="card-text">Kategori Tablosunda Durumu True Olan İle False Olan Kategoriler Arasındaki Sayısal Fark</h4>
+                    <h1 class="card-text">@ViewBag.trueFalseFark</h1>
+                </div>
+            </div>
+            <div class="card text-center ">
+
+            </div>
+        </div>
+    </div>
