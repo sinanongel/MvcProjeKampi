@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    
+
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -47,8 +47,11 @@
                             <th style="width: 20%">
                                 Başlık Adı
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 15%">
                                 Yazarı
+                            </th>
+                            <th style="width: 10%">
+                                Durum
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Kategori
@@ -88,6 +91,14 @@
                             {
                                 color = "badge badge-dark";
                             }
+                            if (item.HeadingStatus == true)
+                            {
+                                //color = "badge badge-success";
+                            }
+                            if (item.HeadingStatus == false)
+                            {
+                                //color = "badge badge-danger";
+                            }
                             <tr>
                                 <td>
                                     @item.HeadingId
@@ -108,6 +119,9 @@
                                         </li>
                                     </ul>
                                 </td>
+                                <td>
+                                    @item.HeadingStatus
+                                </td>
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
@@ -117,12 +131,12 @@
                                         </i>
                                         Yazılar
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="#">
+                                    <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingId">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
+                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
                                         <i class="fas fa-trash">
                                         </i>
                                         Sil
