@@ -26,6 +26,7 @@ namespace MvcProjeKampi.Controllers
         }
         public PartialViewResult MessageListMenu()
         {
+            var s = cm.GetList().Count();
             return PartialView();
         }
     }

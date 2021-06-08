@@ -137,6 +137,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -168,6 +170,10 @@
     <Content Include="AdminLTE-3.0.4\build\npm\DocsPublish.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Plugins.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Publish.js" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\css\style.css" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\index.html" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\readme.txt" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.min.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.css" />
@@ -306,6 +312,21 @@
     <Content Include="AdminLTE-3.0.4\docs\_layouts\home.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\page.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\post.html" />
+    <Content Include="AdminLTE-3.0.4\Images\amazing_mountain_milky_way_by_yakub_nihat-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\armenia_syunik_hayk-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\armenia_yenokavan_lastiver_hayk-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\armenia_yerevan_railway_park-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\beautiful_autumn_landscape_4-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\beautiful_beach_waves-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\beautiful_moon_in_the_sky-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\beautiful_moraine_lake_sunrise-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\beautiful_mountain_landscape_winter_3-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\beautiful_yellow_flowers-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\blue_water_8-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\budapest_citadel-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\butterfly.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\cherries_2-wallpaper-1920x1080.jpg" />
+    <Content Include="AdminLTE-3.0.4\Images\city.jpg" />
     <Content Include="AdminLTE-3.0.4\index.html" />
     <Content Include="AdminLTE-3.0.4\index2.html" />
     <Content Include="AdminLTE-3.0.4\index3.html" />
@@ -2301,6 +2322,10 @@
     <Content Include="Views\Message\Inbox.cshtml" />
     <Content Include="Views\Message\Sendbox.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
+    <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
+    <Content Include="Views\Message\GetSendBoxMessageDetails.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
