@@ -40,7 +40,7 @@
                                 <h6>
                                     Kimden: @Html.DisplayFor(x => x.UserMail)
                                     <span class="mailbox-read-time float-right">
-                                        @DateTime.Parse(@Html.DisplayFor(x => x.ContactDate).ToString()).ToShortDateString()
+                                        @Html.DisplayFor(x => x.ContactDate, Convert.ToString(string.Format("0:dd/MMM/yyyy")))
                                     </span>
                                 </h6>
                             </div>
