@@ -1,14 +1,8 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{
-    ViewBag.Title = "Inbox";
+    ViewBag.Title = "Draft";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
-
-@{
-    string message = "";
-    string color = "";
-    string icon = "";
 }
 
 <!DOCTYPE html>
@@ -35,7 +29,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gelen Mesajlar</h3>
+                        <h3 class="card-title">Taslak Mesajlar</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
@@ -77,29 +71,12 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        if (item.Read == false)
-                                        {
-                                            message = "Okunmadı";
-                                            color = "btn btn-danger btn-sm";
-                                            icon = "fas fa-envelope";
-                                        }
-                                        if (item.Read == true)
-                                        {
-                                            message = "Okundu";
-                                            color = "btn btn-info btn-sm";
-                                            icon = "fas fa-envelope-open";
-                                        }
                                         <tr>
                                             <td>
                                                 <div class="icheck-primary">
                                                     <input type="checkbox" value="" id="check1">
                                                     <label for="check1"></label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <a title="@message" >
-                                                    <i class="@icon"></i>
-                                                </a>
                                             </td>
                                             <td class="mailbox-star"><a href="/Message/GetInboxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/Message/GetInboxMessageDetails/@item.MessageId">@item.SenderMail</a></td>
@@ -153,4 +130,3 @@
 
 </body>
 </html>
-

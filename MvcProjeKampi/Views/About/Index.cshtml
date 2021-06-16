@@ -4,22 +4,35 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@{
+    string status = "";
+    string buttonColor = "";
+}
+
 
 <h2>Hakkımda Veri listesi</h2>
 <table class="table table-bordered">
     <tr>
         <th>Id</th>
         <th>Hakkımda Başlığı</th>
-        <th>Aktif Yap</th>
-        <th>Pasif Yap</th>
+        <th>Durum</th>
     </tr>
     @foreach (var item in Model)
     {
+        if (item.AboutStatus == false)
+        {
+            status = "Pasif";
+            buttonColor = "btn btn-danger";
+        }
+        if (item.AboutStatus == true)
+        {
+            status = "Aktif";
+            buttonColor = "btn btn-success";
+        }
         <tr>
             <td>@item.AboutId</td>
             <td>Başlık</td>
-            <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
-            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+            <td><a href="/About/StatusActivePassive/@item.AboutId" class="@buttonColor">@status</a></td>
         </tr>
     }
 </table>

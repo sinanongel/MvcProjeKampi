@@ -31,6 +31,8 @@ namespace MvcProjeKampi.Controllers
         public ActionResult GetInboxMessageDetails(int id)
         {
             var messageValues = mm.GetById(id);
+            messageValues.Read = true;
+            mm.MessageUpdate(messageValues);
             return View(messageValues);
         }
         public ActionResult GetSendBoxMessageDetails(int id)
@@ -44,23 +46,43 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult NewMessage(Message p)
+        public ActionResult NewMessage(Message p, string value)
         {
             ValidationResult result = messageValidator.Validate(p);
-            if (result.IsValid)
+
+            if (value == "send")
             {
-                p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                mm.MessageAdd(p);
-                return RedirectToAction("Sendbox");
-            }
-            else
-            {
-                foreach (var item in result.Errors)
+                if (result.IsValid)
                 {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    p.SenderMail = "admin@gmail.com";
+                    p.Draft = false;
+                    p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    mm.MessageAdd(p);
+                    return RedirectToAction("Sendbox");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
                 }
             }
+            else if (value == "draft")
+            {
+                p.SenderMail = "admin@gmail.com";
+                p.Draft = true;
+                p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                mm.MessageAdd(p);
+                return RedirectToAction("Draft");
+            }
             return View();
+        }
+
+        public ActionResult Draft()
+        {
+            var draftValues = mm.GetListDraft();
+            return View(draftValues);
         }
     }
 }

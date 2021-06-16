@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,8 +40,9 @@ namespace MvcProjeKampi.Roles
 
         public override string[] GetRolesForUser(string username)
         {
-            Context c = new Context();
-            var x = c.Admins.FirstOrDefault(y => y.AdminUserName == username);
+
+            AdminManager ad = new AdminManager(new EFAdminDal());
+            var x = ad.GetList().FirstOrDefault(y => y.AdminUserName == username);
             return new string[] { x.AdminRole };
         }
 

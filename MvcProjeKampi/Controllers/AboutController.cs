@@ -32,5 +32,22 @@ namespace MvcProjeKampi.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult StatusActivePassive(int id)
+        {
+            var aboutValue = abm.GetById(id);
+
+            if (aboutValue.AboutStatus == true)
+            {
+                aboutValue.AboutStatus = false;
+            }
+            else
+            {
+                aboutValue.AboutStatus = true;
+            }
+            abm.AboutUpdate(aboutValue);
+
+            return RedirectToAction("Index");
+        }
     }
 }

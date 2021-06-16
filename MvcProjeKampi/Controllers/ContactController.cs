@@ -36,6 +36,15 @@ namespace MvcProjeKampi.Controllers
             var gidenMesaj = mm.GetListSendbox().Count();
             ViewBag.gidenMesaj = gidenMesaj;
 
+            var draftMessage = mm.GetListDraft().Count();
+            ViewBag.draftMessage = draftMessage;
+
+            var readMessage = mm.GetListInbox().Where(x => x.Read == true).Count();
+            ViewBag.readMessage = readMessage;
+
+            var unReadMessage = mm.GetListUnRead().Count();
+            ViewBag.unReadMessage = unReadMessage;
+
             return PartialView();
         }
     }
