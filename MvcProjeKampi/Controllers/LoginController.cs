@@ -18,6 +18,7 @@ namespace MvcProjeKampi.Controllers
     {
         // GET: Admin
         AdminManager ad = new AdminManager(new EFAdminDal());
+        WriterLoginManager wlm = new WriterLoginManager(new EFWriterDal());
 
         [HttpGet]
         public ActionResult Index()
@@ -54,13 +55,10 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer p)
         {
-            Context c = new Context();
-            //string password = p.AdminPassword;
-            //string result = Convert.ToBase64String(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
-            //p.AdminPassword = result;
+            //Context c = new Context();
+            //var writerUserInfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
 
-            //var adminUserInfo = ad.GetList().FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.AdminPassword == result);
-            var writerUserInfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            var writerUserInfo = wlm.GetWriter(p.WriterMail, p.WriterPassword);
 
             if (writerUserInfo != null)
             {

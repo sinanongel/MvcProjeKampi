@@ -27,22 +27,23 @@ namespace MvcProjeKampi.Controllers
         }
         public PartialViewResult MessageListMenu()
         {
+            string p = (string)Session["WriterMail"];
             var iletisim = cm.GetList().Count();
             ViewBag.iletisim = iletisim;
 
-            var gelenMesaj = mm.GetListInbox().Count();
+            var gelenMesaj = mm.GetListInbox(p).Count();
             ViewBag.gelenMesaj = gelenMesaj;
 
-            var gidenMesaj = mm.GetListSendbox().Count();
+            var gidenMesaj = mm.GetListSendbox(p).Count();
             ViewBag.gidenMesaj = gidenMesaj;
 
             var draftMessage = mm.GetListDraft().Count();
             ViewBag.draftMessage = draftMessage;
 
-            var readMessage = mm.GetListInbox().Where(x => x.Read == true).Count();
+            var readMessage = mm.GetListInbox(p).Where(x => x.Read == true).Count();
             ViewBag.readMessage = readMessage;
 
-            var unReadMessage = mm.GetListUnRead().Count();
+            var unReadMessage = mm.GetListUnRead(p).Count();
             ViewBag.unReadMessage = unReadMessage;
 
             return PartialView();

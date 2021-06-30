@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -18,29 +19,32 @@ namespace MvcProjeKampi.Controllers
         MessageValidator messageValidator = new MessageValidator();
         public ActionResult Inbox()
         {
-            var messageList = mm.GetListInbox();
+            string p = (string)Session["WriterMail"];
+            var messageList = mm.GetListInbox(p);
             return View(messageList);
         }
         public ActionResult Sendbox()
         {
-            var messageList = mm.GetListSendbox();
+            string p = (string)Session["WriterMail"];
+            var messageList = mm.GetListSendbox(p);
             return View(messageList);
         }
         public PartialViewResult MessageListMenu()
         {
-            var gelenMesaj = mm.GetListInbox().Count();
+            string p = (string)Session["WriterMail"];
+            var gelenMesaj = mm.GetListInbox(p).Count();
             ViewBag.gelenMesaj = gelenMesaj;
 
-            var gidenMesaj = mm.GetListSendbox().Count();
+            var gidenMesaj = mm.GetListSendbox(p).Count();
             ViewBag.gidenMesaj = gidenMesaj;
 
             var draftMessage = mm.GetListDraft().Count();
             ViewBag.draftMessage = draftMessage;
 
-            var readMessage = mm.GetListInbox().Where(x => x.Read == true).Count();
+            var readMessage = mm.GetListInbox(p).Where(x => x.Read == true).Count();
             ViewBag.readMessage = readMessage;
 
-            var unReadMessage = mm.GetListUnRead().Count();
+            var unReadMessage = mm.GetListUnRead(p).Count();
             ViewBag.unReadMessage = unReadMessage;
 
             return PartialView();
@@ -65,13 +69,14 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult NewMessage(Message p, string value)
         {
+            string sender = (string)Session["WriterMail"];
             ValidationResult result = messageValidator.Validate(p);
 
             if (value == "send")
             {
                 if (result.IsValid)
                 {
-                    p.SenderMail = "serpily@gmail.com";
+                    p.SenderMail = sender;
                     p.Draft = false;
                     p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     mm.MessageAdd(p);
