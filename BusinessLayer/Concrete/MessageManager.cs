@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
             return _messageDal.Get(x => x.MessageId == id);
         }
 
+        public List<Message> GetList()
+        {
+            return _messageDal.List();
+        }
+
         public List<Message> GetListDraft()
         {
             return _messageDal.List(x => x.Draft == true);
