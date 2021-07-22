@@ -135,6 +135,10 @@
     <Compile Include="Migrations\202106160917466_mig_skillrename_range.designer.cs">
       <DependentUpon>202106160917466_mig_skillrename_range.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107071004536_mig_changeTable.cs" />
+    <Compile Include="Migrations\202107071004536_mig_changeTable.designer.cs">
+      <DependentUpon>202107071004536_mig_changeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -193,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106160917466_mig_skillrename_range.resx">
       <DependentUpon>202106160917466_mig_skillrename_range.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071004536_mig_changeTable.resx">
+      <DependentUpon>202107071004536_mig_changeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -3,13 +3,10 @@
     ViewBag.Title = "AddCategory";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="~/Scripts/jquery-3.4.1.js"></script>
-
+<br />
 <h1>Yeni Kategori Ekleme Sayfası</h1>
 <br />
-@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post, new { @id="form"}))
+@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post, new { @id = "form" }))
 {
     <div class="form-group">
         @Html.Label("Kategori Adı")
@@ -22,34 +19,4 @@
         <br /><br />
         <button class="btn btn-info" id="Kaydet">Kaydet</button>
     </div>
-
-
-    <script>
-        $("#Kaydet").click(function (e) {
-            e.preventDefault();
-            swal({
-                title: "Save Changes?",
-                text: "",
-                type: "info",
-                showCancelButton: true,
-                cancelButtonClass: 'btn-secondary waves-effect',
-                confirmButtonClass: 'btn-success waves-effect waves-light',
-                confirmButtonText: "Yes",
-                closeOnConfirm: false
-            })
-                .then(val => {
-                    if (!val) throw null;
-                    swal("Saved!", "Your record has been saved.", "success")
-                        .then((confirm) => {
-                            $("#form").submit();
-                        })
-                });
-        });
-
-        $("#studentForm").on('submit', function () {
-            alert('form POST');
-        //})
-        //    swal("Tebrikler!", "Başarılı bir şekilde eklendi!", "success");
-        //})
-    </script>
 }

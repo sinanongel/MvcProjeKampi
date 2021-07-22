@@ -33,6 +33,7 @@ namespace MvcProjeKampi.Controllers
             ValidationResult result = categoryValidator.Validate(p);
             if (result.IsValid)
             {
+                TempData["addCategory"] = "";
                 cm.CategoryAdd(p);
                 return RedirectToAction("Index");
             }

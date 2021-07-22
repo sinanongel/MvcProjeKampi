@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<Skill>
+@{
+    ViewBag.Title = "SkillCardList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@if (TempData["addSkill"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        swal("Tebrikler!", "Başarılı bir şekilde eklendi!", "success");
+    </script>
+}
+
+@if (TempData["updateSkill"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        swal("Tebrikler!", "Başarılı bir şekilde güncellendi!", "success");
+    </script>
+}
+<h1>Yetenekler</h1>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Yetenek Adı</th>
+        <th>Yüzdesi</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.SkillId</th>
+            <td>@item.SkillName</td>
+            <td>@item.Range</td>
+            <td><a href="/SkillCard/EditSkill/@item.SkillId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/SkillCard/DeleteSkill/@item.SkillId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/SkillCard/AddSkill" class="btn btn-info">Yeni Yetenek</a>

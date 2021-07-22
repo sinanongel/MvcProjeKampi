@@ -18,8 +18,9 @@ namespace MvcProjeKampi.Controllers
         MessageValidator messageValidator = new MessageValidator();
 
         [Authorize]
-        public ActionResult Inbox(string p)
+        public ActionResult Inbox()
         {
+            string p = (string)Session["AdminUserName"];
             var messageList = mm.GetListInbox(p);
             return View(messageList);
         }
@@ -79,10 +80,10 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
-        public ActionResult Draft()
-        {
-            var draftValues = mm.GetListDraft();
-            return View(draftValues);
-        }
+        //public ActionResult Draft()
+        //{
+        //    var draftValues = mm.GetListDraft();
+        //    return View(draftValues);
+        //}
     }
 }

@@ -57,13 +57,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <nav class="main-header d-flex">
             <div id="brand">
                 <div id="logo">
-                    <a href="index.html">
+                    <a class="scroll" href="#home">
                         <i class="fas fa-crosshairs"></i>
                     </a>
                 </div>
                 <div id="word-mark">
                     <h1>
-                        <a href="index.html">Mvc_Kampı</a>
+                        <a href="/Home/HomePage/">Mvc_Kampı</a>
                     </h1>
                 </div>
             </div>
@@ -95,9 +95,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <a href="/Default/Headings/1">SÖZLÜK</a>
                     </li>
                     <li class="login">
-                        <button type="button" class="btn login-btn text-uppercase " data-toggle="modal" data-target="#exampleModalCenter">
-                            GİRİŞ YAP
-                        </button>
+                        <a href="/Login/Index/" class="btn btn-primary btn-sm text-uppercase active">ADMIN GİRİŞİ</a>
+                    </li>
+                    <li class="login">
+                        <a href="/Login/WriterLogin/" class="btn btn-primary btn-sm text-uppercase active">YAZAR GİRİŞİ</a>
                     </li>
                 </ul>
             </div>
@@ -298,33 +299,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim1.jpg">
+                        <a title="Sitenin vitrin kısmı." href="~/Images/Vitrin.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim1.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/Vitrin.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 1</h3>
+                                    <h3>VİTRİN</h3>
 
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim2.jpg">
+                        <a title="Admin giriş ekranı." href="~/Images/AdminGiris.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim2.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/AdminGiris.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 2</h3>
+                                    <h3>ADMIN GİRİŞ</h3>
 
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim3.jpg">
+                        <a title="Yazar giriş ekranı." href="~/Images/YazarGiris.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim3.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/YazarGiris.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 3</h3>
+                                    <h3>YAZAR GİRİŞ</h3>
 
                                 </div>
                             </div>
@@ -333,33 +334,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim4.jpg">
+                        <a title="Yazarlar Listesi." href="~/Images/Yazarlar.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim4.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/Yazarlar.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 4</h3>
+                                    <h3>YAZARLAR</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim5.jpg">
+                        <a title="Resimlerin göründüğü ve eklendiği kısım." href="~/Images/Galeri.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim5.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/Galeri.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 5</h3>
-
+                                    <h3>GALERİ</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim6.jpg">
+                        <a title="İstatistik verilerin grafik şeklinde göründüğü kısım." href="~/Images/Grafikler.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim6.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/Grafikler.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 6</h3>
-
+                                    <h3>GRAFİK</h3>
                                 </div>
                             </div>
                         </a>
@@ -367,9 +366,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim7.jpg">
+                        <a title="Gelen ve giden mesajların göründüğü okunduğu ve cevap verildiği kısım." href="~/Images/Mesajlar.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim7.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/Mesajlar.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
                                     <h3>GÖRSEL 7</h3>
 
@@ -378,21 +377,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim8.jpg">
+                        <a title="Yazarların yazdığı yazılar, birbirlrine yaptıkları yorumlar vs." href="~/Images/Sözlük.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim8.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/Sözlük.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 8</h3>
+                                    <h3>SÖZLÜK</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/AdminLTE-3.0.4/web1/images/Resim9.jpg">
+                        <a title="Yeteneklerin görsel olarak göründüğü kısım." href="~/Images/Yetenekler.jpg">
                             <div class="section_1_gallery_grid1">
-                                <img src="~/AdminLTE-3.0.4/web1/images/Resim9.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Images/Yetenekler.jpg" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>GÖRSEL 9</h3>
+                                    <h3>YETENEKLER</h3>
 
                                 </div>
                             </div>
@@ -413,7 +412,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-sm-3 col-6 stats_info counter_grid">
 
                     <i class="far fa-lightbulb"></i>
-                    <p class="counter">645</p>
+                    <p class="counter">@ViewBag.hCount</p>
                     <h4>BAŞLIK SAYISI</h4>
 
                 </div>
@@ -427,14 +426,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-sm-3 col-6 stats_info counter_grid">
 
                     <i class="fas fa-magic"></i>
-                    <p class="counter">1145</p>
+                    <p class="counter">@ViewBag.wCount</p>
                     <h4>YAZAR SAYISI</h4>
 
                 </div>
                 <div class="col-sm-3 col-6 stats_info counter_grid2">
 
                     <i class="far fa-smile"></i>
-                    <p class="counter">1045</p>
+                    <p class="counter">@ViewBag.mCount</p>
                     <h4>MESAJ SAYISI</h4>
 
                 </div>

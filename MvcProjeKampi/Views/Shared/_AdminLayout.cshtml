@@ -10,7 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>AdminLTE 3 | Dashboard 3</title>
+    <title>Mvc Kampı | Admin</title>
+
+    <!-- Ekko Lightbox -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.css">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
@@ -150,6 +153,22 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/SkillCard/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-graduation-cap"></i>
+                                <p>
+                                    Yetenek Profili
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/SkillCard/SkillCardList/" class="nav-link">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>
+                                    Yetenekler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/Authorization/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
@@ -162,6 +181,14 @@ to get the desired effect
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Galeri
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Schedule/Index/" class="nav-link">
+                                <i class="nav-icon far fa-calendar-alt"></i>
+                                <p>
+                                    Takvim(Başlıklar)
                                 </p>
                             </a>
                         </li>
@@ -220,14 +247,37 @@ to get the desired effect
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
     <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE -->
-    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+    <!-- jQuery UI -->
+    <script src="~/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Ekko Lightbox -->
+    <script src="~/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
 
     <!-- OPTIONAL SCRIPTS -->
     <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+
+    <script>
+        $(function () {
+            $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true
+                });
+            });
+
+            $('.filter-container').filterizr({ gutterPixels: 3 });
+            $('.btn[data-filter]').on('click', function () {
+                $('.btn[data-filter]').removeClass('active');
+                $(this).addClass('active');
+            });
+        })
+    </script>
+
+    <!-- Bootstrap -->
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
     <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
     @RenderSection("Editor", false)
 </body>

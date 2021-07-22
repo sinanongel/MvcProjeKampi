@@ -4,6 +4,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@if (TempData["addCategory"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        swal("Tebrikler!", "Başarılı bir şekilde eklendi!", "success");
+    </script>
+}
+
 <br />
 <table class="table table-bordered">
     <tr>

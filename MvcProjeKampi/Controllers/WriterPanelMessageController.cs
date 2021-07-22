@@ -38,7 +38,7 @@ namespace MvcProjeKampi.Controllers
             var gidenMesaj = mm.GetListSendbox(p).Count();
             ViewBag.gidenMesaj = gidenMesaj;
 
-            var draftMessage = mm.GetListDraft().Count();
+            var draftMessage = mm.GetListDraft(p).Count();
             ViewBag.draftMessage = draftMessage;
 
             var readMessage = mm.GetListInbox(p).Where(x => x.Read == true).Count();
@@ -103,7 +103,8 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Draft()
         {
-            var draftValues = mm.GetListDraft();
+            string p = (string)Session["WriterMail"];
+            var draftValues = mm.GetListDraft(p);
             return View(draftValues);
         }
     }
